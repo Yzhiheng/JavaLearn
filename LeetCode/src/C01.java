@@ -7,10 +7,10 @@ public class C01 {
     public static void main(String[] args) {
         int nums[] = {2, 7, 11, 15};
         int target = 9;
-        Solution solution = new Solution();
-        int [] result = solution.twoSum(nums,target);
-        int [] result1 = solution.towSum1(nums,target);
-        int [] result2 = solution.toSum2(nums,target);
+        Solution1 solution1 = new Solution1();
+//        int [] result = solution.twoSum(nums,target);
+//        int [] result1 = solution.towSum1(nums,target);
+        int [] result2 = solution1.towSum2(nums,target);
 
         for (int i = 0; i < result2.length; i++) {
             System.out.println(result2[i]);
@@ -18,7 +18,7 @@ public class C01 {
     }
 }
 
-class Solution {
+class Solution1 {
     public int[] twoSum(int[] nums, int target) {
         // 暴力法
         for (int i = 0; i < nums.length; i++) {
@@ -45,7 +45,7 @@ class Solution {
         throw new IllegalArgumentException("No two sum solution");
     }
 
-    public int[] toSum2(int[] nums,int target){
+    public int[] towSum2(int[] nums,int target){
         Map<Integer,Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
